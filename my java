@@ -1,0 +1,53 @@
+package xxx.chakan; /**
+ * Created by wangshengxue on 17-8-11.
+ */
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+/**
+ * Created by evan on 17-7-16.
+ */
+class Jsontools {
+//    private void parseJson(String strResult) {
+//
+//        JSONObject jsonObj = new JSONObject();
+//        jsonObj.get(strResult)dt;
+//        int id = jsonObj.getInt("id");
+//        String name = jsonObj.getString("name");
+//        String gender = jsonObj.getString("gender");
+//    }
+
+    //    public static void main(String[] args) {
+////        String strResult = "{'id':11,'name':'tom','gender':'男'}";
+////        JsonParser parser = new JsonParser();
+////        JsonObject object = (JsonObject) parser.parse(strResult);
+////        System.out.println(object.get("name"));
+////        int i = Integer.parseInt(String.valueOf(object.get("id")));
+////        System.out.println(i);
+//
+//
+////        (jsontools.getTemp());
+////        shujuku.insert(jsontools.getTemp())
+//        }
+    private String json;
+    private JsonParser jsonParser;
+    private JsonObject object;
+
+    public Jsontools(String json) {
+        this.json = json;
+        jsonParser = new JsonParser();
+        object = (JsonObject) jsonParser.parse(json);
+
+    }
+
+    public int getbingzhong() {
+        int result = Integer.parseInt(String.valueOf(object.get("bingzhong")));
+        return result;
+    }
+
+    public String getshuliang() {
+        String result = String.valueOf(object.get("shuliang"));
+        return result;
+    }
+}
